@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans.xsd">
+	
+	<!-- Root Context: defines shared resources visible to all other web components -->
+		
+	<!-- Calculator 타입의 객체 생성하기 -->
+	<bean id="calculator" class="com.acorn.prac2.web.BCalculator"></bean>
+
+	<!-- Program 객체 생성 bean -->
+	<!-- Program 객체 내부로 Calculator type의 주입  injection  -->
+	
+	<!-- 생성자 주입, 매개변수 있는 생성자 존재해야함 -->
+	<!-- 
+	<bean id="p" class="com.acorn.prac2.spring.Program">
+		<constructor-arg ref="calculator"></constructor-arg>
+	</bean>
+	  -->
+	  
+	 <!-- 세터 주입 -->
+	 <bean id="p" class="com.acorn.prac2.web.Program">
+	 <!-- setCalculator() 사용하는 것 -->
+	 <property name="calculator" ref="calculator"></property>
+	 </bean> 	
+	 
+	 <!-- 오후실습 세터 주입 -->
+	 <bean id="t" class="com.acorn.prac2.오후실습.spring.TravelProgram">
+	 <property name="travel" ref="travel"></property>
+	 </bean>
+		
+</beans>
