@@ -1,0 +1,2 @@
+service bean root-context.xml에 수동등록해보기 
+
