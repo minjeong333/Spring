@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link th:href="@{/css/hello.css}" rel="stylesheet">
+    <script th:src="@{/js/hello.js}"></script>
+
+</head>
+<body>
+
+<img th:src="@{/imgs/삼겹살.jpg}" alt="삼겹살 img">
+<img th:src="@{'/imgs/' + ${foodImage}}" alt="foodImage">
+
+<h2> food list </h2>
+<div th:each="item : ${list}">
+  <p th:text="${item}"> 기본문구 </p>
+
+    <button onclick="hi()"> 클릭 </button>
+
+
+</div>
+</body>
+</html>
